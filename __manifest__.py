@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+{
+    "name": "Maintenance Custom Fela",
+    "summary": "Extensiones de configuración para Maintenance (view_vendor 0/1)",
+    "version": "17.0.1.0.0",
+    "author": "Tu Empresa",
+    "website": "",
+    "category": "Maintenance",
+    "license": "LGPL-3",
+    "depends": ["maintenance"],
+    "data": [
+        "views/res_config_settings_views.xml",
+    ],
+    "application": True,
+    "installable": True,
+    "auto_install": False,
+}
