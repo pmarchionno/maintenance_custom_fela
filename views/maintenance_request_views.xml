@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="maintenance_request_view_form_inherit_fela" model="ir.ui.view">
+        <field name="name">maintenance.request.form.inherit.fela</field>
+        <field name="model">maintenance.request</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Agregar campo invisible para controlar visibilidad -->
+            <xpath expr="//sheet" position="before">
+                <field name="show_vendor" invisible="1"/>
+            </xpath>
+            
+            <!-- Ocultar email_cc según configuración -->
+            <xpath expr="//field[@name='email_cc']" position="attributes">
+                <attribute name="invisible">not show_vendor</attribute>
+            </xpath>
+            
+            <!-- Ocultar vendor_id según configuración -->
+            <xpath expr="//field[@name='vendor_id']" position="attributes">
+                <attribute name="invisible">not show_vendor</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
