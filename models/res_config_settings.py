@@ -6,21 +6,17 @@ PARAM_KEY = "maintenance_custom_fela.view_vendor"
 class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
-    # Checkbox en UI; se persistirá como '0'/'1' en ir.config_parameter
     view_vendor = fields.Boolean(
         string="Ver Proveedor en Maintenance",
-        config_parameter=False,  # lo manejamos manualmente para guardar '0'/'1'
-        help="Si está activo, el parámetro del sistema se guarda como '1'; si no, como '0'."
+        help="Si está activo, se mostrarán los campos de vendor y email cc en las solicitudes de mantenimiento."
     )
 
     @api.model
     def get_values(self):
         res = super().get_values()
         icp = self.env["ir.config_parameter"].sudo()
-        raw = icp.get_param(PARAM_KEY, default="1")  # por defecto '1'
-        res.update(
-            view_vendor=(raw == "1")
-        )
+        raw = icp.get_param(PARAM_KEY, default="1")
+        res.update(view_vendor=(raw == "1"))
         return res
 
     def set_values(self):

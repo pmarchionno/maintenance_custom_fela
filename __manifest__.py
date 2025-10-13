@@ -8,10 +8,12 @@
     "license": "LGPL-3",
     "depends": [
         "maintenance",
+        "dev_maintenance_purchase_agreement",
     ],
     "data": [
         "views/res_config_settings_views.xml",
         "views/maintenance_request_views.xml",
+        "views/maintenance_request_vendor_views.xml",
     ],
     "application": True,
     "installable": True,

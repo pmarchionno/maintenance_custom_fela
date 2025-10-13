@@ -5,20 +5,21 @@
         <field name="model">maintenance.request</field>
         <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
         <field name="arch" type="xml">
-            <!-- Agregar campo invisible para controlar visibilidad -->
-            <xpath expr="//sheet" position="before">
+
+            <!-- Campo show_vendor oculto pero presente para el compute -->
+            <xpath expr="//form/sheet" position="inside">
                 <field name="show_vendor" invisible="1"/>
             </xpath>
-            
-            <!-- Ocultar email_cc según configuración -->
-            <xpath expr="//field[@name='email_cc']" position="attributes">
-                <attribute name="invisible">not show_vendor</attribute>
-            </xpath>
-            
-            <!-- Ocultar vendor_id según configuración -->
+
+            <!-- Aplicar modifiers sobre campos existentes -->
             <xpath expr="//field[@name='vendor_id']" position="attributes">
-                <attribute name="invisible">not show_vendor</attribute>
+                <attribute name="modifiers">{'invisible': [('show_vendor', '=', False)]}</attribute>
             </xpath>
+
+            <xpath expr="//field[@name='email_cc']" position="attributes">
+                <attribute name="modifiers">{'invisible': [('show_vendor', '=', False)]}</attribute>
+            </xpath>
+
         </field>
     </record>
 </odoo>
