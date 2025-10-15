@@ -11,6 +11,16 @@
                 <field name="show_vendor" invisible="1"/>
             </xpath>
 
+            <!-- Agregar campos Sitio y Sector después de equipment_id -->
+            <xpath expr="//field[@name='equipment_id']" position="after">
+                <field name="site_id" 
+                       options="{'no_create': True, 'no_open': True}"
+                       required="1"/>
+                <field name="sector_id" 
+                       options="{'no_create': True, 'no_open': True}"
+                       context="{'default_site_id': site_id}"/>
+            </xpath>
+
             <!-- Aplicar modifiers sobre campos existentes -->
             <xpath expr="//field[@name='vendor_id']" position="attributes">
                 <attribute name="modifiers">{'invisible': [('show_vendor', '=', False)]}</attribute>
