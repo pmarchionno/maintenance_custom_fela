@@ -143,13 +143,13 @@
     <!-- Menús -->
     <menuitem id="maintenance_site_menu"
               name="Sitios"
-              parent="maintenance.menu_maintenance_config"
+              parent="maintenance.menu_maintenance_configuration"
               action="maintenance_site_action"
               sequence="25"/>
 
     <menuitem id="maintenance_sector_menu"
               name="Sectores"
-              parent="maintenance.menu_maintenance_config"
+              parent="maintenance.menu_maintenance_configuration"
               action="maintenance_sector_action"
               sequence="26"/>
 
