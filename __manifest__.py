@@ -12,11 +12,9 @@
     ],
     "data": [
         "security/ir.model.access.csv",
-        "data/maintenance_site_data.xml",
-        "views/maintenance_site_views.xml",
-        "views/res_config_settings_views.xml",
         "views/maintenance_request_views.xml",
-        "views/maintenance_request_vendor_views.xml",
+        "views/maintenance_site_views.xml",
+        "data/maintenance_site_data.xml",
     ],
     "application": True,
     "installable": True,
