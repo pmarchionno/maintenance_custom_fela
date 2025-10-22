@@ -2,7 +2,7 @@
     "name": "Maintenance Custom Fela",
     "summary": "Extensiones de configuración para Maintenance (view_vendor 0/1, Sitios y Sectores)",
     "version": "18.0.1.0.0",
-    "author": "Tu Empresa",
+    "author": "Devman3",
     "website": "",
     "category": "Maintenance",
     "license": "LGPL-3",
