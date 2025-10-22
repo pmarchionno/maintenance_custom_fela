@@ -8,9 +8,10 @@
     "license": "LGPL-3",
     "depends": [
         "maintenance",
-        "dev_maintenance_purchase_agreement",
+         "dev_maintenance_purchase_agreement",
     ],
     "data": [
+        "security/maintenance_security.xml",
         "security/ir.model.access.csv",
         "views/maintenance_request_views.xml",
         "views/maintenance_site_views.xml",
